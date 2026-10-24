@@ -1,0 +1,77 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+ <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<body>
+<header>
+    <div class="logo">Arpita's Portfolio<span>.</span></div>
+    <nav>
+        <ul>
+       <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <button id="theme-toggle" title="Toggle Dark/Light Mode">🌙</button>
+</header>
+<section id="Home">
+    <h2>Hello it's Me <span>Arpita</span></h2>
+    <p>I am learning Web Devlopment</p>
+    
+    <div class="social-icons">
+  <a href="https:/www.linkedin.com/in/arpita-singh-8ab872328" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+  <a href="https://github.com/arpitasinghXI" target="_blank"><i class="fa-brands fa-github"></i></a>
+  <a href="#"><i class="fa-brands fa-instagram"></i></a>
+  <a href="mailto:arpi100singh@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i></a>
+</div>
+<button target="_blank" class="resume-btn">Download Resume</button>
+</section>
+
+<footer>
+    <div class="footer-icons">
+        <a href="mailto:arpi100@gmail.com"><i class="gmail-icon">Gmail</i></a>
+        <a href="#"><i class="call-icon">Call</i></a>
+    </div>
+    <p>© 2023 Arpita. All rights reserved.</p>
+</footer>
+<!-- Tumhare baki ke sections (contact form, footer aadi) yahan upar honge -->
+
+    <!-- Ye script body close hone se thik pehle honi chahiye -->
+    <script>
+        const toggleBtn = document.getElementById('theme-toggle');
+        const body = document.body;
+
+        // Ye line hume batayegi ki button mila ya nahi (Testing ke liye)
+        console.log("Button status:", toggleBtn);
+
+        if (toggleBtn) {
+            if(localStorage.getItem('theme')=='dark'){
+            body.classList.add('dark-mode'); 
+             toggleBtn.textContent = '☀️'; 
+            }
+
+            toggleBtn.addEventListener('click', function() {
+                body.classList.toggle('dark-mode');
+                
+                if (body.classList.contains('dark-mode')) {
+                    toggleBtn.textContent = '☀️'; 
+                    localStorage.setItem('theme','dark');
+                } else {
+                    toggleBtn.textContent = '🌙';
+                    localStorage.setItem('theme','light');
+                }
+            });
+        } else {
+            console.log("Galti: Button nahi mil raha hai!");
+        }
+    </script>
+</body>
+</html>

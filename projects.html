@@ -1,0 +1,135 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+ <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<body>
+<header>
+    <div class="logo">Arpita's Portfolio<span>.</span></div>
+    <nav>
+        <ul>
+       <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <button id="theme-toggle" title="Toggle Dark/Light Mode">🌙</button>
+</header>
+  <section id="projects">
+    <h2>My Projects</h2>
+    <div class="projects-container">
+        <div class="project-card">
+            <h3>Project Name 1</h3>
+            <p>Description of the project </p>
+            <a href="#" target="_blank"    class="read-btn">View on GitHub</a>
+        </div>
+        <div class="project-card">
+            <h3>Project Name 2</h3>
+            <p>Description of the second project</p>
+            <a href="#" target="_blank"    class="read-btn">View Code</a>
+        </div>   
+        <div class="project-card">
+            <h3>Project Name 3</h3>
+            <p>Description of the third project</p>
+            <a href="#"  target="_blank"     class="read-btn">View Code</a>
+        </div>  
+        <div class="project-card">
+            <h3>Project Name 4</h3>
+            <p>Description of the fourth project</p>
+            <a href="#"  target="_blank"  class="read-btn">View Code</a>
+        </div>   
+        <div class="project-card">
+            <h3>Project Name 5</h3>
+            <p>Description of the fifth project</p>
+            <a href="#"   target="_blank" class="read-btn">View Code</a>
+        </div>  
+        <div class="project-card">
+            <h3>Project Name 6</h3>
+            <p>Description of the sixth project</p>
+            <a href="#" target="_blank" class="read-btn">View Code</a>
+        </div>  
+        <div class="project-card">
+            <h3>Project Name 7</h3>
+            <p>Description of the seventh project</p>
+            <a href="#"  target="_blank" class="read-btn">View Code</a>
+        </div>  
+     </div>
+     <section id="certifications">
+    <h2>My Certifications</h2>
+    
+    <div class="cert-container">
+        <!-- Certificate Card 1 -->
+        <div class="cert-card">
+            <h3>Web Development</h3>
+            <p>Completed comprehensive training in Web Development focusing on HTML, CSS, and JS.</p>
+            <!-- href mein apne certificate ki image ka naam daalna -->
+            <a href="web-certificate.jpg" target="_blank" class="read-btn">View Certificate</a>
+        </div>
+
+        <!-- Certificate Card 2 -->
+        <div class="cert-card">
+            <h3>C++ Programming</h3>
+            <p>Certification for mastering core C++ concepts, data structures, and algorithms.</p>
+            <a href="C++-certificate.jpeg" target="_blank" class="read-btn">View Certificate</a>
+        </div>
+
+        <!-- Certificate Card 3 -->
+        <div class="cert-card">
+            <h3>Java Core</h3>
+            <p>Certification for Object-Oriented Programming and basic software development in Java.</p>
+            <a href="java-certificate.jpeg" target="_blank" class="read-btn">View Certificate</a>
+        </div>
+    </div>
+</section>
+  </section> 
+  
+
+<!-- Task 9: Semantic Footer -->
+<footer>
+    <div class="footer-icons">
+        <a href="mailto:arpi100@email.com"><i class="email-icon">Email</i></a>
+        <a href="#"><i class="call-icon">Call</i></a>
+    </div>
+    <p>© 2023 Arpita. All rights reserved.</p>
+</footer>
+<!-- Tumhare baki ke sections (contact form, footer aadi) yahan upar honge -->
+
+    <!-- Ye script body close hone se thik pehle honi chahiye -->
+    <script>
+        const toggleBtn = document.getElementById('theme-toggle');
+        const body = document.body;
+
+        // Ye line hume batayegi ki button mila ya nahi (Testing ke liye)
+        console.log("Button status:", toggleBtn);
+
+        if (toggleBtn) {
+            if(localStorage.getItem('theme')=='dark'){
+                body.classList.add('dark-mode');
+                toggleBtn.textContent=' ☀️';
+            }
+            toggleBtn.addEventListener('click', function() {
+                body.classList.toggle('dark-mode');
+                
+                if (body.classList.contains('dark-mode')) {
+                    toggleBtn.textContent = '☀️'; 
+                    localStorage.setItem('theme','dark');
+                } else {
+                    toggleBtn.textContent = '🌙';
+                    localStorage.setItem('theme','light');
+                }
+            });
+        } else {
+            console.log("Galti: Button nahi mil raha hai!");
+        }
+    </script>
+</body>
+</html>
+
+
